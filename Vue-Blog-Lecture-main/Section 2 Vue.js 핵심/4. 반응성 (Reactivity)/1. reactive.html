@@ -1,0 +1,35 @@
+<html>
+  <head></head>
+  <body>
+    <div id="app"></div>
+    <script type="module">
+      import {
+        createApp,
+        reactive,
+      } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+
+      const root = {
+        template: `
+          <h1>{{ proxy.quiz }}</h1>
+        `,
+        setup() {
+          let proxy = reactive({ quiz: "서울에 사는 거지는?" });
+          // reactive 함수는 proxy 객체를 반환
+          // reactive 함수는 자동으로 Proxy 객체에 처리 함수를 넣어주기 때문에 따로 처리 함수를 넣어줄 필요가 없다
+
+          setTimeout(function () {
+            proxy.quiz = "설거지";
+          }, 3000);
+
+          return {
+            proxy,
+          };
+        },
+      };
+
+      const app = createApp(root);
+
+      app.mount("#app");
+    </script>
+  </body>
+</html>

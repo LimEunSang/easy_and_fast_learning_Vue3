@@ -1,0 +1,30 @@
+<html>
+  <head></head>
+  <body>
+    <h1></h1>
+    <script>
+      const proxy = new Proxy(
+        { quiz: "서울에 사는 거지는?" }, // 첫 번째 값에 복제할 객체 작성
+        {
+          set(target, property, value) {
+            // target: Proxy를 만들 때 넣었던 객체 ({ quiz: "서울에 사는 거지는?" })
+            // property: 사용하는 속성 (quiz)
+            // value: 새로 쓸 값
+
+            target[property] = value;
+
+            const h1 = document.querySelector("h1");
+            h1.innerText = value;
+          },
+        } // 두 번째 값부터 처리할 함수들 작성
+      );
+
+      proxy.quiz = "설거지";
+      console.log(proxy.quiz);
+
+      setTimeout(() => {
+        proxy.quiz = "안녕하신가";
+      }, 3000);
+    </script>
+  </body>
+</html>

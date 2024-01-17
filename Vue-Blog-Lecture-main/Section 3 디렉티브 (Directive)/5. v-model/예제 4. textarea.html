@@ -1,0 +1,26 @@
+<html>
+  <head></head>
+  <body>
+    <div id="app"></div>
+    <script type="module">
+      import {
+        createApp,
+        reactive,
+      } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+      const root = {
+        template: `
+          <textarea v-model="text.value" />
+        `,
+        setup() {
+          return {
+            text: reactive({
+              value: `있을 수 있고\n없을 수도 있는\n섬 이름은?`,
+            }),
+          };
+        },
+      };
+      const app = createApp(root);
+      app.mount("#app");
+    </script>
+  </body>
+</html>
