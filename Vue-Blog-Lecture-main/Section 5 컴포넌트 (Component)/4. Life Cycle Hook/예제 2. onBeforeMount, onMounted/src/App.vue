@@ -10,10 +10,10 @@ import { onBeforeMount, onMounted } from "vue";
 console.log("Setup: ", document.querySelector("h2"));
 
 onBeforeMount(function () {
-  console.log("Before mount", document.querySelector('h2'));
+  console.log("Before mount", document.querySelector("h2"));
 });
 
-onMounted(function () { 
+onMounted(function () {
   console.log("Mounted", document.querySelector("h2"));
-})
+});
 </script>

@@ -16,6 +16,6 @@ onUpdated(() => {
   const button = document.querySelector("button");
   button.innerText = counter.value + "입니다!";
   counter.value++;
-  console.log('onUpdated", counter.value');
+  console.log("onUpdated", counter.value);
 });
 </script>

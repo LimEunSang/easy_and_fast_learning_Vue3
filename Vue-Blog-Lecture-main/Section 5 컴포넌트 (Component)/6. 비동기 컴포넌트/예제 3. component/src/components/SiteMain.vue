@@ -7,7 +7,5 @@
 <script setup>
 import { defineAsyncComponent } from "vue";
 
-const List = defineAsyncComponent(() =>
-  import("@/components/main/List.vue")
-);
+const List = defineAsyncComponent(() => import("@/components/main/List.vue"));
 </script>
